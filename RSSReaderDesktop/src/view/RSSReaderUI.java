@@ -85,7 +85,7 @@ public class RSSReaderUI extends JFrame{
 			}
 		});
 
-		fetchButton.setBounds(666, 25, 117, 29);
+		fetchButton.setBounds(677, 29, 94, 21);
 		lbdLabel.setBounds(28, 101, 320, 30);
 		linkItemLabel.setBounds(371, 540, 400, 21);
 		copyrightLabel.setBounds(28, 540, 319, 21);
