@@ -36,6 +36,7 @@ import controller.Reader;
  *
  */
 public class RSSReaderUI extends JFrame{
+	private static final long serialVersionUID = 1L;
 	private Reader reader;
 	private Rss rss;
 	private Item[] itemArray;
@@ -175,22 +176,24 @@ public class RSSReaderUI extends JFrame{
 	 * Init list of items by using JList.
 	 */
 	public void initListItem() {
-		itemArray = new Item[rss.getChannel().getItems().size()];
-		itemArray = rss.getChannel().getItems().toArray(itemArray);
-		itemList = new JList<Item>(itemArray);
-		itemList.setBounds(0, 0, 400, 400);
-		itemList.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
-		itemPane.setViewportView(itemList);
-		itemList.addListSelectionListener(new ListSelectionListener() {
-			@Override
-			public void valueChanged(ListSelectionEvent e) {
-				itemList.getSelectedIndex();
-				Item item = itemList.getSelectedValue();
-				showDescription(item);
-				link = item.getLink();
-				linkItemLabel.setText(link);
-			}
-		});
+		if(rss.getChannel().getItems() != null){
+			itemArray = new Item[rss.getChannel().getItems().size()];
+			itemArray = rss.getChannel().getItems().toArray(itemArray);
+			itemList = new JList<Item>(itemArray);
+			itemList.setBounds(0, 0, 400, 400);
+			itemList.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+			itemPane.setViewportView(itemList);
+			itemList.addListSelectionListener(new ListSelectionListener() {
+				@Override
+				public void valueChanged(ListSelectionEvent e) {
+					itemList.getSelectedIndex();
+					Item item = itemList.getSelectedValue();
+					showDescription(item);
+					link = item.getLink();
+					linkItemLabel.setText(link);
+				}
+			});
+		}
 	}
 
 	/**

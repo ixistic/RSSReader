@@ -1,7 +1,5 @@
 package view;
 
-import controller.Reader;
-import model.Rss;
 
 /**
  * Main class.
