@@ -6,8 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="item")
-
+@XmlType(name = "item")
 /**
  * Item data model of rss.
  * Contain many contents. 
@@ -24,7 +23,7 @@ public class Item {
 	private Enclosure enclosure;
 
 	public Item() {
-		
+
 	}
 
 	public String getTitle() {
@@ -58,11 +57,11 @@ public class Item {
 	public void setPubDate(String pubDate) {
 		this.pubDate = pubDate;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return getTitle();
 	}
-	
+
 	public Enclosure getEnclosure() {
 		return enclosure;
 	}

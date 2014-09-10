@@ -8,8 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="channel")
-
+@XmlType(name = "channel")
 /**
  * Channel data model of rss.
  * Contain items. 
@@ -25,13 +24,13 @@ public class Channel {
 	private String lastBuildDate;
 	private String copyright;
 	private String ttl;
-	@XmlElement(name="item")
+	@XmlElement(name = "item")
 	private List<Item> items;
 
 	public Channel() {
-		
+
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -90,6 +89,7 @@ public class Channel {
 
 	/**
 	 * Get all items into list of item.
+	 * 
 	 * @return list of item.
 	 */
 	public List<Item> getItems() {

@@ -11,11 +11,11 @@ import javax.xml.bind.Unmarshaller;
 import model.Rss;
 
 /**
- * Read RSS from URL by using JAXB.
+ * Read RSS from URL by using JAXB. 
  * Use unmarshal to convert xml to object.
  * 
  * @author Veerapat Threeravipark 5510547022
- *
+ * 
  */
 public class Reader {
 
@@ -25,7 +25,9 @@ public class Reader {
 
 	/**
 	 * Get RSS from URL.
-	 * @param urlText url from website.
+	 * 
+	 * @param urlText
+	 *            url from website.
 	 * @return rss if correct url , null if incorrect url.
 	 */
 	public Rss getRss(String urlText) {
@@ -36,12 +38,13 @@ public class Reader {
 			Object obj = unmarshaller.unmarshal(url);
 			Rss rss = (Rss) obj;
 			return rss;
-		} catch (JAXBException | MalformedURLException | IllegalArgumentException e) {
+		} catch (JAXBException | MalformedURLException
+				| IllegalArgumentException e) {
 			notifyError();
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Notify when incorrect url.
 	 */

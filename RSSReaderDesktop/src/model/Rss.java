@@ -8,8 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="rss")
-
+@XmlType(name = "rss")
 /**
  * RSS data model.
  * Contain channel. 
@@ -20,9 +19,9 @@ import javax.xml.bind.annotation.XmlType;
 public class Rss {
 	@XmlElement
 	private Channel channel;
-	
+
 	public Rss() {
-		
+
 	}
 
 	public Channel getChannel() {

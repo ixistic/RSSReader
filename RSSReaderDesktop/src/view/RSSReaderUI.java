@@ -29,13 +29,13 @@ import model.Rss;
 import controller.Reader;
 
 /**
- * Channel data model of rss.
- * Contain items. 
+ * Channel data model of rss. 
+ * Contain items.
  * 
  * @author Veerapat Threeravipark 5510547022
- *
+ * 
  */
-public class RSSReaderUI extends JFrame{
+public class RSSReaderUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Reader reader;
 	private Rss rss;
@@ -59,19 +59,18 @@ public class RSSReaderUI extends JFrame{
 	private MouseListener mouse;
 
 	/**
-	 * Constructor of this class.
-	 * Naming Jframe.
-	 * Init user interface.
+	 * Constructor of this class. Naming Jframe. Init user interface.
 	 */
 	public RSSReaderUI() {
 		super("RSSReader");
-		initUI();
+		reader = new Reader();
+		initComponents();
 	}
-	
+
 	/**
 	 * Init user interface.
 	 */
-	public void initUI(){
+	public void initComponents() {
 		setSize(800, 600);
 		setLocation(50, 50);
 		setResizable(false);
@@ -143,9 +142,9 @@ public class RSSReaderUI extends JFrame{
 	 */
 	public void fetchData() {
 		clearOldData();
-		reader = new Reader();
 		rss = reader.getRss(urlInput.getText());
-		if (!(rss == null)) {
+		if (!(rss == null)) 
+		{
 			channelLabel.setText(rss.getChannel().getTitle());
 			copyrightLabel.setText(rss.getChannel().getCopyright());
 			descriptionChannelArea.setText(rss.getChannel().getDescription());
@@ -176,7 +175,8 @@ public class RSSReaderUI extends JFrame{
 	 * Init list of items by using JList.
 	 */
 	public void initListItem() {
-		if(rss.getChannel().getItems() != null){
+		if (rss.getChannel().getItems() != null) 
+		{
 			itemArray = new Item[rss.getChannel().getItems().size()];
 			itemArray = rss.getChannel().getItems().toArray(itemArray);
 			itemList = new JList<Item>(itemArray);
@@ -207,7 +207,8 @@ public class RSSReaderUI extends JFrame{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				if (Desktop.isDesktopSupported() && !link.equals("")) {
+				if (Desktop.isDesktopSupported() && !link.equals("")) 
+				{
 					Desktop desktop = Desktop.getDesktop();
 					try {
 						desktop.browse(new URI(link));

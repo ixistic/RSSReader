@@ -6,8 +6,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="enclosure")
-
+@XmlType(name = "enclosure")
 /**
  * Enclosure data model of rss.
  * Multimedia content. 
@@ -22,9 +21,9 @@ public class Enclosure {
 	private int length;
 	@XmlAttribute
 	private String type;
-	
+
 	public Enclosure() {
-		
+
 	}
 
 	public String getUrl() {
@@ -50,6 +49,5 @@ public class Enclosure {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
+
 }
