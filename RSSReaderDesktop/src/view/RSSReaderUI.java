@@ -29,8 +29,7 @@ import model.Rss;
 import controller.Reader;
 
 /**
- * Channel data model of rss. 
- * Contain items.
+ * Initiate UI component show the user interface.
  * 
  * @author Veerapat Threeravipark 5510547022
  * 
